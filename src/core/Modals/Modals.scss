@@ -10,6 +10,7 @@
     z-index: 1001;
 
     background-color: color-mix(in srgb, var(--dark) 70%, transparent);
+    padding-bottom: var(--safe_area_inset_bottom);
   }
 
   &__container {

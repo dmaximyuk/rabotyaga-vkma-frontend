@@ -1,0 +1,30 @@
+.Switch {
+  position: relative;
+  overflow: hidden;
+  width: 60px;
+  height: 34px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 50px;
+  padding: 4px;
+  cursor: pointer;
+  border: 2px solid var(--accent);
+  box-sizing: border-box;
+
+  &__handle {
+    width: 50%;
+    background-color: var(--accent);
+    border-radius: 40px;
+
+    &:before {
+      content: "";
+      padding-top: 100%;
+      float: left;
+    }
+  }
+
+  &[data-isOn="true"] {
+    justify-content: flex-end;
+  }
+}

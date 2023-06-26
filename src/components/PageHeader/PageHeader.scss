@@ -1,0 +1,53 @@
+.PageHeader {
+  & {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+    width: 100vw;
+    background-color: var(--page-header_background-color);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    padding: 0 var(--page-padding);
+    top: 0;
+    left: 0;
+  }
+
+  &__before,
+  &__after {
+    display: flex;
+    color: var(--accent);
+    box-sizing: border-box;
+    align-items: center;
+    padding: 4px;
+  }
+
+  &__before {
+    flex-shrink: 0;
+    padding-right: 12px;
+  }
+
+  &__after {
+  }
+
+  &__in {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  &--ios,
+  &--ios + &--safe-area {
+    padding-top: var(--safe_area_inset_top);
+    height: var(--page-header_heigh--ios);
+  }
+
+  &--android,
+  &--android + &--safe-area {
+    height: var(--page-header_heigh--android);
+  }
+
+  &--safe-area {
+    margin-bottom: var(--page-padding);
+  }
+}

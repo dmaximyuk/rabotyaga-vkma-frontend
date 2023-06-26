@@ -1,4 +1,4 @@
-body {
+:root {
   // colors
   --white: #ffffff;
   --dark: #1e1f23;
@@ -9,39 +9,53 @@ body {
   --yellow: #febf3d;
   --purp: #fe6d7a;
   --blue: #2e6dee;
-
-  --accent: var(--blue);
-  --page-background-color: var(--white);
-  --footer-background-color: var(--gray);
+  --accent: var(--green);
 
   // fonts
   --fonts-family-default: sans-serif;
-  --fonts-family-header: "Roboto", var(--fonts-family-default);
-  --fonts-family-description: "Roboto", var(--fonts-family-default);
-  --fonts-family-text: "Roboto", var(--fonts-family-default);
+  --fonts-family-header: "Nunito", var(--fonts-family-default);
+  --fonts-family-description: "Nunito", var(--fonts-family-default);
+  --fonts-family-paragraph: "Nunito", var(--fonts-family-default);
   --font-weight-header: 500;
   --font-weight-header-accent: 500;
   --font-weight-description: 400;
-  --font-weight-text: 400;
+  --font-weight-paragraph: 400;
   --font-size-default: 16px;
   --font-size-header-accent: var(--font-size-default);
   --font-size-header-xl: calc(var(--font-size-default) / 100 * 200);
   --font-size-header-l: calc(var(--font-size-default) / 100 * 165);
   --font-size-header-m: calc(var(--font-size-default) / 100 * 115);
-  --font-size-text: var(--font-size-default);
+  --font-size-paragraph: var(--font-size-default);
   --font-size-description: calc(var(--font-size-default) / 100 * 90);
 
   // gaps
-  --block-gap: 28px;
-  --block-gap-tablet: 20px;
-  --block-gap-laptop: 20px;
-  --block-gap-desktop: 20px;
-  --block-padding: 15px;
-  --block-padding-tablet: 20px;
-  --block-padding-laptop: 28px;
-  --block-padding-desktop: 32px;
   --page-padding: 16px;
+
+  // page
+  --page-padding: 16px;
+  --page-header_background-color: var(--white);
+  --page-header_heigh--android: 60px;
+  --page-header_heigh--ios: 52px;
+  --page_background-color: var(--white);
+
+  // tabbar
+  --tabbar_height: 48px;
 
   // box styles
   --box-shadow: 0px 4px 8px -2px;
+
+  //@supports (padding-top: constant(safe-area-inset-top)) {
+  //  --safe_area_inset_top: constant(safe-area-inset-top);
+  //  --safe_area_inset_right: constant(safe-area-inset-right);
+  //  --safe_area_inset_bottom: constant(safe-area-inset-bottom);
+  //  --safe_area_inset_left: constant(safe-area-inset-left);
+  //}
+
+  @supports (padding-top: env(safe-area-inset-top)) {
+    /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */
+    --safe_area_inset_top: env(safe-area-inset-top);
+    --safe_area_inset_right: env(safe-area-inset-right);
+    --safe_area_inset_bottom: env(safe-area-inset-bottom);
+    --safe_area_inset_left: env(safe-area-inset-left);
+  }
 }

@@ -1,7 +1,14 @@
-import { FC } from "react";
+import { PageHeader } from "components";
 
-import { Page } from "uikit";
+import type { FC } from "react";
+import type { Pages } from "store/types";
 
-export const Home: FC = () => {
-  return <Page>ok</Page>;
+export const Home: FC<{ id: Pages }> = (props) => {
+  return (
+    <>
+      <PageHeader description="Hello" isBackButton>
+        Home
+      </PageHeader>
+    </>
+  );
 };

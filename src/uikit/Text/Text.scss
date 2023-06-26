@@ -1,0 +1,25 @@
+.Text {
+  &__title {
+    font: {
+      size: 18px;
+      family: var(--fonts-family-header);
+      weight: 600;
+    }
+  }
+
+  &__paragraph {
+    font: {
+      size: 16px;
+      family: var(--fonts-family-paragraph);
+      weight: 400;
+    }
+  }
+
+  &__description {
+    font: {
+      size: 14px;
+      family: var(--fonts-family-description);
+      weight: 400;
+    }
+  }
+}

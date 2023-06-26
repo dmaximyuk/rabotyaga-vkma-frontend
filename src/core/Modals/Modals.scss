@@ -1,0 +1,29 @@
+.ModalWrapper {
+  &__backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 1001;
+
+    background-color: color-mix(in srgb, var(--dark) 70%, transparent);
+  }
+
+  &__container {
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+    background-color: var(--page_background-color);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: hidden;
+
+    &__inherit {
+      padding: var(--page-padding);
+    }
+  }
+}

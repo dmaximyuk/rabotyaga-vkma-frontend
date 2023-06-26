@@ -8,7 +8,7 @@ import { compilerOptions } from "./tsconfig.json";
 export default defineConfig({
   publicDir: "public",
   esbuild: {
-    pure: import.meta.env.PROD ? ["console.log"] : [],
+    pure: import.meta.env?.VITE_MODE === "production" ? ["console.log"] : [],
   },
   build: {
     outDir: path.join(compilerOptions.outDir),

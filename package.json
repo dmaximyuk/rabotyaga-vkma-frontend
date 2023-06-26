@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && cross-env DISABLE_ESLINT_PLUGIN=true vite build",
+    "build": "tsc && cross-env VITE_MODE=production DISABLE_ESLINT_PLUGIN=true vite build",
     "preview": "vite preview"
   },
   "dependencies": {

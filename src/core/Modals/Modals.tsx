@@ -1,6 +1,6 @@
 import "./Modals.scss";
 
-import { memo, useEffect } from "react";
+import { memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import type { FC } from "react";
@@ -11,11 +11,6 @@ const ModalWrapper: FC<ModalsProps> = (props) => {
   const modals = {
     [`${Modals.UserMoreInfo}`]: <div>UserMoreInfo</div>,
   };
-
-  useEffect(() => {
-    console.log("ok");
-  }, [props.activeModal]);
-
   const isModalEntityExists = modals.hasOwnProperty(`${props.activeModal}`);
 
   return (
@@ -39,7 +34,7 @@ const ModalWrapper: FC<ModalsProps> = (props) => {
             exit={{ height: 0 }}
             transition={{
               stiffness: 80,
-              damping: 14,
+              damping: 12,
               type: "spring",
             }}
           >

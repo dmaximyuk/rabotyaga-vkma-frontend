@@ -1,9 +1,10 @@
 import "./Modals.scss";
 
 import { memo, useCallback, useEffect } from "react";
-import { motion, AnimatePresence, useMotionValue, PanInfo } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue } from "framer-motion";
 
 import type { FC } from "react";
+import type { PanInfo } from "framer-motion";
 import type { ModalsProps } from "./Modals.interface";
 import { Modals } from "store/types";
 

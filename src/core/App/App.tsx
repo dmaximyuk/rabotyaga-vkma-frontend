@@ -24,13 +24,13 @@ export const App: FC = () => {
   //   }, timeout);
   // }, [activePage]);
 
-  useEffect(() => {
-    if (activeModal === undefined) {
-      setTimeout(() => {
-        setActiveModal(Modals.UserMoreInfo);
-      }, 2000);
-    }
-  }, [activeModal]);
+  // useEffect(() => {
+  //   if (activeModal === undefined) {
+  //     setTimeout(() => {
+  //       setActiveModal(Modals.UserMoreInfo);
+  //     }, 2000);
+  //   }
+  // }, [activeModal]);
 
   const modalsProvider = useMemo(
     () => <ModalsProvider activeModal={activeModal} onClose={() => setActiveModal(undefined)} />,

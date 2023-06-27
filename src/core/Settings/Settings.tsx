@@ -4,7 +4,7 @@ import { List, ListItem, Switch } from "uikit";
 import type { FC } from "react";
 import type { Pages } from "store/types";
 
-export const Settings: FC<{ id: Pages }> = (props) => {
+export const Settings: FC<{ id: Pages }> = () => {
   return (
     <>
       <PageHeader description="Customize yours" isBackButton>
@@ -13,7 +13,7 @@ export const Settings: FC<{ id: Pages }> = (props) => {
 
       <Switch />
 
-      <List isDynamics>
+      <List delay="fast">
         <ListItem />
         <ListItem />
         <ListItem />

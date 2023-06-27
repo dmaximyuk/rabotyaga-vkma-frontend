@@ -36,7 +36,15 @@ const ModalWrapper: FC<ModalsProps> = (props) => {
 
   const isModalEntityExists = modals.hasOwnProperty(`${props.activeModal}`);
 
-  const handleDragOnClose = useCallback(
+  const handleOnDrag = useCallback(
+    (_: MouseEvent | TouchEvent | PointerEvent, { offset }: PanInfo) => {
+      if (offset.y < 0) {
+        y.set(0);
+      }
+    },
+    [y],
+  );
+  const handleOnDragEnd = useCallback(
     (_: unknown, { velocity, offset }: PanInfo) => {
       if (velocity.y > 150 && offset.y > 50) {
         props.onClose();
@@ -76,7 +84,8 @@ const ModalWrapper: FC<ModalsProps> = (props) => {
             style={{ y: y }}
             drag="y"
             dragConstraints={{ top: 0, bottom: 0 }}
-            onDragEnd={handleDragOnClose}
+            onDrag={handleOnDrag}
+            onDragEnd={handleOnDragEnd}
             onPointerDown={() => y.set(0)}
           >
             <div className="ModalWrapper__container__inherit">{modals[`${props.activeModal}`]}</div>

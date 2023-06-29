@@ -13,5 +13,6 @@ export enum TextSize {
 export interface TextProps {
   mode: TextMode;
   size?: TextSize;
+  className?: string;
   children: string;
 }

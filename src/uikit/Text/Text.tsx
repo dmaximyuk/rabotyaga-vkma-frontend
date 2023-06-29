@@ -24,7 +24,12 @@ const Text: FC<TextProps> = (props) => {
   return createElement(
     element,
     {
-      className: cn("Text", [`Text__${props.mode}`], [`Text__size_mode-${props?.size || "l"}`]),
+      className: cn(
+        "Text",
+        [`Text__${props.mode}`],
+        [`Text__size_mode-${props?.size || "l"}`],
+        props.className || "",
+      ),
     },
     props.children,
   );

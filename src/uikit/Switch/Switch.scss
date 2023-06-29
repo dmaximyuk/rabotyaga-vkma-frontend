@@ -1,8 +1,8 @@
 .Switch {
   position: relative;
   overflow: hidden;
-  width: 60px;
-  height: 34px;
+  width: 52px;
+  height: 30px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -24,7 +24,7 @@
     }
   }
 
-  &[data-isOn="true"] {
+  &[data-on="true"] {
     justify-content: flex-end;
   }
 }

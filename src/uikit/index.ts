@@ -3,3 +3,4 @@ export * from "./Switch/Switch";
 export * from "./Select/Select";
 export * from "./List/List";
 export * from "./ListItem/ListItem";
+export * from "./Avatar/Avatar";

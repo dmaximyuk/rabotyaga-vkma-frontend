@@ -1,0 +1,7 @@
+.Home {
+  &__profile {
+    display: flex;
+    align-items: center;
+    gap: var(--page-padding);
+  }
+}

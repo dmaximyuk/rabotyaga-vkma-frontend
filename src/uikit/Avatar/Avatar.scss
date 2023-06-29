@@ -1,0 +1,13 @@
+.Avatar {
+  & {
+    min-width: 24px;
+    max-width: 92px;
+    min-height: 24px;
+    max-height: 92px;
+    border-radius: 10000px;
+    box-shadow: var(--box-shadow);
+    object-fit: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+}

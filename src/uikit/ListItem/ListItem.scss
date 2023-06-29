@@ -1,0 +1,24 @@
+.ListItem {
+  position: relative;
+  box-shadow: var(--box-shadow);
+  padding: var(--page-padding);
+  margin-bottom: var(--page-padding);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: var(--page-padding);
+
+  &__before {
+    color: var(--accent);
+  }
+
+  &__after {
+    order: 1;
+    margin-left: auto;
+
+    &_isOpening {
+      color: var(--accent);
+    }
+  }
+}

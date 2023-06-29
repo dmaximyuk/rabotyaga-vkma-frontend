@@ -30,6 +30,7 @@
 
   // gaps
   --page-padding: 16px;
+  --block-padding: calc(var(--page-padding) * 1.75);
 
   // page
   --page-padding: 16px;
@@ -42,7 +43,7 @@
   --tabbar_height: 48px;
 
   // box styles
-  --box-shadow: 0px 4px 8px -2px;
+  --box-shadow: 0 0 4px rgba(0, 0, 0, 0.08);
 
   @supports (padding-top: constant(safe-area-inset-top)) {
     --safe_area_inset_top: constant(safe-area-inset-top);
@@ -52,7 +53,6 @@
   }
 
   @supports (padding-top: env(safe-area-inset-top)) {
-    /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */
     --safe_area_inset_top: env(safe-area-inset-top);
     --safe_area_inset_right: env(safe-area-inset-right);
     --safe_area_inset_bottom: env(safe-area-inset-bottom);

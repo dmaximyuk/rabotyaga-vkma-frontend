@@ -1,0 +1,13 @@
+.List {
+  &__title {
+    margin-bottom: var(--page-padding);
+  }
+
+  &_marginIsBottom {
+    margin-bottom: var(--block-padding);
+  }
+
+  & > div:last-child > div {
+    margin: 0;
+  }
+}

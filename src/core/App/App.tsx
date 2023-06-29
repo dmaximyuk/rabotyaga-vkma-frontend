@@ -10,11 +10,9 @@ import { Pages, Modals } from "store/types";
 import { ACTIVE_MODAL, ACTIVE_PAGE } from "store";
 
 export const App: FC = () => {
-  // const [activePage, setActivePage] = useRecoilState(ACTIVE_PAGE);
+  const [activePage, setActivePage] = useRecoilState(ACTIVE_PAGE);
   const [activeModal, setActiveModal] = useRecoilState(ACTIVE_MODAL);
   const activeNotify = "";
-
-  const activePage = Pages.Settings;
 
   // useEffect(() => {
   //   const timeout = activePage === Pages.Home ? 2000 : 15000;

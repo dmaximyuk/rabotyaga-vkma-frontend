@@ -1,11 +1,15 @@
+import "./List.scss";
+
 import { Children, useMemo } from "react";
 import { motion } from "framer-motion";
+import { Text } from "uikit";
 
-import type { HTMLAttributes, FC, ReactElement } from "react";
+import type { FC, ReactElement } from "react";
+import { TextMode } from "uikit";
+import type { ListProps } from "./List.interface";
+import cn from "classnames";
 
-export const List: FC<HTMLAttributes<HTMLUListElement> & { delay?: "slow" | "medium" | "fast" }> = (
-  props,
-) => {
+export const List: FC<ListProps> = (props) => {
   const children = Children.toArray(props.children) as ReactElement[];
   const delay = useMemo(() => {
     switch (props.delay) {
@@ -21,18 +25,32 @@ export const List: FC<HTMLAttributes<HTMLUListElement> & { delay?: "slow" | "med
   }, [props.delay]);
 
   return (
-    <motion.div>
-      {children.map((item, index) => (
-        <motion.div
-          initial={props?.delay && { opacity: 0, translateY: 50 }}
-          animate={props?.delay && { opacity: 1, translateY: 0 }}
-          transition={
-            props?.delay ? { delay: delay * index, stiffness: 200, damping: 9, type: "spring" } : {}
-          }
-        >
-          {item}
-        </motion.div>
-      ))}
-    </motion.div>
+    <>
+      {props.title && (
+        <Text className="List__title" mode={TextMode.Title}>
+          {props.title}
+        </Text>
+      )}
+      <motion.div
+        className={cn("List", {
+          List_marginIsBottom: props.marginIsBottom,
+        })}
+      >
+        {children.map((item, index) => (
+          <motion.div
+            key={index}
+            initial={props?.delay && { opacity: 0, translateY: 50 }}
+            animate={props?.delay && { opacity: 1, translateY: 0 }}
+            transition={
+              props?.delay
+                ? { delay: delay * index, stiffness: 200, damping: 9, type: "spring" }
+                : {}
+            }
+          >
+            {item}
+          </motion.div>
+        ))}
+      </motion.div>
+    </>
   );
 };

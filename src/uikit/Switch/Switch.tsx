@@ -5,7 +5,9 @@ import { motion } from "framer-motion";
 
 import type { FC } from "react";
 
-export const Switch: FC = (props) => {
+import type { SwitchProps } from "./Switch.interface";
+
+export const Switch: FC<SwitchProps> = (props) => {
   const [isOn, setIsOn] = useState<boolean>(false);
 
   const spring = {
@@ -14,10 +16,13 @@ export const Switch: FC = (props) => {
     damping: 20,
   };
 
-  const toggleSwitch = useCallback(() => setIsOn(!isOn), [isOn, setIsOn]);
+  const toggleSwitch = useCallback(() => {
+    props?.onChange && props?.onChange(!isOn);
+    setIsOn(!isOn);
+  }, [isOn, setIsOn]);
 
   return (
-    <div className="Switch" data-isOn={isOn} onClick={toggleSwitch}>
+    <div className="Switch" data-on={isOn} onClick={toggleSwitch}>
       <motion.div className="Switch__handle" layout transition={spring} />
     </div>
   );

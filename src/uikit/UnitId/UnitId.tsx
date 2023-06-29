@@ -1,11 +1,11 @@
-import "./UnitName.scss";
+import "./UnitId.scss";
 
 import type { FC } from "react";
 
 import { Text, TextMode } from "uikit";
-import type { UnitNameProps } from "./UnitName.interface";
+import type { UnitIdProps } from "./UnitId.interface";
 
-export const UnitName: FC<UnitNameProps> = (props) => {
+export const UnitId: FC<UnitIdProps> = (props) => {
   // const [name, setName] = useState<string>();
 
   // useEffect(() => {
@@ -22,5 +22,5 @@ export const UnitName: FC<UnitNameProps> = (props) => {
   //   }
   // }, [props.userId, props.userName]);
 
-  return <Text mode={props.mode || TextMode.Title}>Dmitry Maximyuk</Text>;
+  return <Text mode={props.mode || TextMode.Description}>@12345678</Text>;
 };

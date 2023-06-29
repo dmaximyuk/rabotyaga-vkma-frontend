@@ -1,12 +1,12 @@
 import "./Home.scss";
 
 import { Page, PageHeader } from "components";
-import { Avatar, Text, TextMode } from "uikit";
+import { Avatar, UnitId, UnitName } from "uikit";
 
 import type { FC } from "react";
 import type { Pages } from "store/types";
 
-export const Home: FC<{ id: Pages }> = (props) => {
+export const Home: FC<{ id: Pages }> = () => {
   return (
     <Page header={<PageHeader description="Отличного дня!">Главная страница</PageHeader>}>
       <div className="Home__profile">
@@ -15,8 +15,8 @@ export const Home: FC<{ id: Pages }> = (props) => {
           size={56}
         />
         <div>
-          <Text mode={TextMode.Title}>Dmitry Maximyuk</Text>
-          <Text mode={TextMode.Description}>@id123456</Text>
+          <UnitName userId={[123456]} />
+          <UnitId userId={[12345678]} />
         </div>
       </div>
     </Page>

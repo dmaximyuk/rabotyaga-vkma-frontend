@@ -1,6 +1,6 @@
 import type { TextMode } from "uikit";
 
-export interface UnitNameProps {
+export interface UnitIdProps {
   mode?: TextMode;
   userId: number[];
 }
